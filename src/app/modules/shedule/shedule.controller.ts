@@ -13,7 +13,7 @@ const createShedule = catchAsync(async (req: Request, res: Response) => {
 	sendResponse(res, {
 		statusCode: httpStatus.OK,
 		success: true,
-		message: 'Shedule create successfully',
+		message: 'Class created successfully',
 		data: result,
 	});
 });
@@ -34,7 +34,7 @@ const getTrainerSchedules = catchAsync(async (req: Request, res: Response) => {
 	sendResponse(res, {
 		statusCode: httpStatus.OK,
 		success: true,
-		message: 'Trainer retreived successfully',
+		message: 'Trainer Classess retreived successfully',
 		data: result,
 	});
 });

@@ -1,0 +1,25 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.trainerValidations = void 0;
+const zod_1 = require("zod");
+// Enum for Gender, assuming values as 'Male', 'Female', 'Other'
+const Gender = zod_1.z.enum(['Male', 'Female', 'Other']);
+// Zod validation schema for the Trainer model
+const createTrainerValidationSchema = zod_1.z.object({
+    password: zod_1.z.string().min(6, 'Password must be at least 6 characters long'),
+    trainer: zod_1.z
+        .object({
+        name: zod_1.z.string().min(3, 'Name must be at least 3 characters long'), // Name is required and must be at least 3 characters
+        email: zod_1.z.string().email('Invalid email address'), // Email must be a valid email format
+        gender: Gender, // Gender must be one of the values defined in the Gender enum
+        contactNo: zod_1.z
+            .string()
+            .min(10, 'Contact number must be at least 10 characters'), // Contact number must be at least 10 characters
+        address: zod_1.z.string().min(5, 'Address must be at least 5 characters long'), // Address must be at least 5 characters
+        experienceYears: zod_1.z.number().min(0, 'Experience years cannot be negative'), // Experience must be a non-negative number
+    })
+        .strict(),
+});
+exports.trainerValidations = {
+    createTrainerValidationSchema,
+};

@@ -14,17 +14,7 @@ datasource db {
 }
 
 
-enum UserRole{
-  SUSER_ADMIN
-  ADMIN
-  TRAINER
-  TRAINEE
-}
-enum UserStatus{
-  ACTIVE
-  INACTIVE
-  SUSPENDED
-}
+
 
 
 

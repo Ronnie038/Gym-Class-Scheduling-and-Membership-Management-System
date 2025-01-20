@@ -16,7 +16,7 @@ const moduleRoutes = [
 		route: trainerRoutes,
 	},
 	{
-		path: '/shedules',
+		path: '/schedules',
 		route: sheduleRoutes,
 	},
 
