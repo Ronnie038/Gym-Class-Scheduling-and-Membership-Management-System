@@ -12,6 +12,8 @@ Below is the relational diagram illustrating the models and relationships:
 
 ![Relational Diagram](https://drive.google.com/file/d/1pzJ503Xk8-I1MsQMSOb6H0lNpi9Ku0-S/view?usp=sharing)
 
+## live server url = https://gym-class-scheduling-and-membership.onrender.com
+
 ##er diagram link =https://lucid.app/lucidchart/517d3d58-df19-45f2-aa9f-dd3fac067c92/edit?viewport_loc=-870%2C-1606%2C2994%2C1391%2C0_0&invitationId=inv_aeb201ee-69c0-410e-9ac3-d214f12ae9d3
 
 
@@ -96,7 +98,7 @@ npx prisma migrate dev --name init
 
 | Parameter   | Type     | Description                |
 | :--------   | :------- | :------------------------- |
-| `Athorization`   | `string` | **Required**. `true` |
+| `Athorization`   | `admin login jwt access token` | **Required**. `true` |
 
 ```
 Request body 
@@ -165,8 +167,8 @@ Request body
 ```
  {
   "trainerId": "df6cfeeb-a828-4275-93cb-c8843daa2bab",
-  "startTime": "2025-01-20T16:00:00.000Z",
-  "endTime": "2025-01-20T18:00:00.000Z",
+  "startTime": "2025-01-20T16:00:00.000Z",   this time format required
+  "endTime": "2025-01-20T18:00:00.000Z",     this time format required
   "sessionDate":"2025-01-21"                optional
 }
 
