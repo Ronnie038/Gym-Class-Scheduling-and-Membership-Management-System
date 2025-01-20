@@ -165,8 +165,8 @@ Request body
 ```
  {
   "trainerId": "df6cfeeb-a828-4275-93cb-c8843daa2bab",
-  "startTime": "2025-01-20T16:00:00.000Z",
-  "endTime": "2025-01-20T18:00:00.000Z",
+  "startTime": "2025-01-20T16:00:00.000Z",   this time format required
+  "endTime": "2025-01-20T18:00:00.000Z",     this time format required
   "sessionDate":"2025-01-21"                optional
 }
 
