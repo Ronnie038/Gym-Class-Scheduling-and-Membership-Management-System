@@ -1,4 +1,4 @@
-import { Status, UserStatus } from '@prisma/client';
+import { Status } from '@prisma/client';
 
 import * as bcrypt from 'bcrypt';
 import config, { httpStatus } from '../../../config';
