@@ -8,12 +8,12 @@
 	"scripts": {
 		"dev": "ts-node-dev --respawn --transpile-only src/server.ts",
 		"start": "nodemon dist/server.js",
-		"build": "rimraf dist && tsc",
+		"build": "tsc",
 		"ts.check": "tsc --project tsconfig.json",
 		"add-build": "git add dist",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"postinstall": "prisma generate",
-		"vercel-build": "prisma generate && prisma migrate deploy &&  tsc"
+		"vercel-build": "prisma generate && prisma migrate deploy && tsc"
 	},
 	"pre-commit": [
 		"ts.check",
