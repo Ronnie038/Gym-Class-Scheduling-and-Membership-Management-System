@@ -96,7 +96,7 @@ npx prisma migrate dev --name init
 
 | Parameter   | Type     | Description                |
 | :--------   | :------- | :------------------------- |
-| `Athorization`   | `string` | **Required**. `true` |
+| `Athorization`   | `admin login jwt access token` | **Required**. `true` |
 
 ```
 Request body 
