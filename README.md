@@ -26,6 +26,22 @@ Below is the relational diagram illustrating the models and relationships:
 ---
 
 
+## Installation
+
+Install Gym-Class-Scheduling-and-Membership-Management-System
+ with yarn
+
+```bash
+
+git clone https://github.com/Ronnie038/Gym-Class-Scheduling-and-Membership-Management-System.git
+
+cd project-folder
+
+yarn install 
+
+npx prisma migrate dev --name init
+```
+    
 
 ### Base URL http://localhost:5000/
 
