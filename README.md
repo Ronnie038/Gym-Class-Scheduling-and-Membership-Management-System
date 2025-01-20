@@ -27,6 +27,7 @@ Below is the relational diagram illustrating the models and relationships:
 
 ---
 
+##admin login credential  email = admin@admin.com  pass= password
 
 ## Installation
 
