@@ -71,6 +71,19 @@ npx prisma migrate dev --name init
 | `password`   | `string` | **Required**. `true` |
 | `email`    | `email` | **Required**. `true` |
 
+``
+  response body  
+``
+```
+  {
+    "success": true,
+    "message": "Logged in successfully!",
+    "data": {
+        "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTczNzM1NTc1MCwiZXhwIjoxNzM4MjE5NzUwfQ.B9fqfjUUoFNBHhl_VP6XNdkVS4FuSco10f9fUphPENs"
+    }
+}
+
+```
 
 ## create trainer
 
