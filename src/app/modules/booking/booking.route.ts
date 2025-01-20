@@ -30,6 +30,5 @@ router.get(
 );
 
 // Route to get a specific shedule by ID
-router.get('/:id', bookingController.getBookingsByTraineeId);
 
 export const bookingRoutes = router;
