@@ -1,0 +1,125 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  role      Role
+  status    Status   @default(active)
+  isDeleted Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  admin     Admin?
+  trainee   Trainee?
+  trainer   Trainer?
+}
+
+// Enum for user roles
+enum Role {
+  SUSER_ADMIN
+  ADMIN
+  TRAINER
+  TRAINEE
+}
+
+// Enum for user status
+enum Status {
+  active
+  inactive
+}
+
+// Enum for gender
+enum Gender {
+  Male
+  Female
+  Other
+}
+
+// Define the Admin model
+model Admin {
+  id        String   @id @default(uuid())
+  name      String
+  email     String   @unique
+  user      User     @relation(fields: [email], references: [email])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Enum for admin roles
+
+// Define the Trainer model
+
+// Define the Trainee model
+model Trainee {
+  id          String    @id @default(uuid())
+  name        String
+  email       String    @unique
+  user        User      @relation(fields: [email], references: [email])
+  gender      Gender
+  dateOfBirth DateTime
+  contactNo   String
+  address     String
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  bookings    Booking[]
+
+  @@map("trainees")
+}
+
+// Define the Booking model (Trainee to Trainer relationship)
+model Booking {
+  id         String   @id @default(uuid())
+  traineeId  String
+  trainee    Trainee  @relation(fields: [traineeId], references: [id])
+  scheduleId String
+  schedule   Schedule @relation(fields: [scheduleId], references: [id])
+
+  bookingDate DateTime
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("bookings")
+}
+
+model Trainer {
+  id              String     @id @default(uuid())
+  name            String
+  email           String     @unique
+  user            User       @relation(fields: [email], references: [email])
+  gender          Gender
+  contactNo       String
+  address         String
+  experienceYears Int
+  createdAt       DateTime   @default(now())
+  updatedAt       DateTime   @updatedAt
+  shedules        Schedule[]
+}
+
+// Define the Schedule model (Trainer to Schedule relationship)
+model Schedule {
+  id          String    @id @default(uuid())
+  trainerId   String
+  trainer     Trainer   @relation(fields: [trainerId], references: [id])
+  sessionDate DateTime
+  startTime   DateTime
+  endTime     DateTime
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  bookings    Booking[]
+
+  @@map("schedules")
+}
