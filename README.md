@@ -31,7 +31,7 @@ Below is the relational diagram illustrating the models and relationships:
 
 ## API Reference
 
-#### create trainee
+####  Login Admin
 
 ```http
   post /api/v1/auth/login
