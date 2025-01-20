@@ -12,6 +12,8 @@ Below is the relational diagram illustrating the models and relationships:
 
 ![Relational Diagram](https://drive.google.com/file/d/1pzJ503Xk8-I1MsQMSOb6H0lNpi9Ku0-S/view?usp=sharing)
 
+##er diagram link =https://lucid.app/lucidchart/517d3d58-df19-45f2-aa9f-dd3fac067c92/edit?viewport_loc=-870%2C-1606%2C2994%2C1391%2C0_0&invitationId=inv_aeb201ee-69c0-410e-9ac3-d214f12ae9d3
+
 
 ---
 
@@ -21,7 +23,7 @@ Below is the relational diagram illustrating the models and relationships:
 - **ORM**: Prisma
 - **Database**: PostgreSQL
 - **Authentication**: JWT (JSON Web Tokens)
-- **Deployment**: Hosted on Vercel 
+- **Deployment**: Hosted on render 
 
 ---
 
