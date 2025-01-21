@@ -330,7 +330,7 @@ Request body
 ```
 ## Cancel Trainee Schedule Booking
 ```http
-  Post /api/v1/bookings/:id  --->bookingId
+  Put /api/v1/bookings/:id  --->bookingId
 ```
 
 ```sh
